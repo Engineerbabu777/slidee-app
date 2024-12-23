@@ -24,7 +24,7 @@ export default function Main () {
   useEffect(() => {
     if (fontsLoaded) {
       SplashScreen.hideAsync() // Hide the splash screen once fonts are loaded
-      router.push('(onboarding)') // Redirect to the onboarding page
+      router.push('/(auth)/create-account') // Redirect to the onboarding page
     }
   }, [fontsLoaded]) 
 

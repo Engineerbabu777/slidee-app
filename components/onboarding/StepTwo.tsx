@@ -120,7 +120,9 @@ export default function StepTwo ({ currentStep, handleNextStep,handleSkip }: Ste
             onPress={handleSkip}
           >
             <Text
-              style={{ color: 'white', textAlign: 'center', fontWeight: '500' }}
+                style={{ color: 'white', textAlign: 'center', fontWeight: '500',
+                fontFamily: 'NotoBold',
+               }}
             >
               Skip
             </Text>
@@ -137,7 +139,9 @@ export default function StepTwo ({ currentStep, handleNextStep,handleSkip }: Ste
             onPress={handleNextStep}
           >
             <Text
-              style={{ color: 'white', textAlign: 'center', fontWeight: '500' }}
+                style={{ color: 'white', textAlign: 'center', fontWeight: '500',
+                fontFamily: 'NotoBold',
+               }}
             >
               Next
             </Text>

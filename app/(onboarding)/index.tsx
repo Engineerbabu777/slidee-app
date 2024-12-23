@@ -6,7 +6,7 @@ import { useRouter } from 'expo-router'
 import { ScrollView } from 'react-native'
 
 export default function Main () {
-  const [currentStep, setCurrentStep] = useState<number|null>(0)
+  const [currentStep, setCurrentStep] = useState<number>(0)
   const router = useRouter() 
 
 
@@ -14,18 +14,18 @@ export default function Main () {
   const handleNextStep = () => {
     // IF STEP IS TWO THEN MOVE TO CREATE ACCOUNT!
     if(currentStep === 2) {
-        router.push('(auth)/create-account')
+        router.push('/(auth)/create-account')
     }else{
         setCurrentStep(currentStep + 1)
     }
   }
 
   const handleSkip = () => {
-    router.push('(auth)/create-account')
+    router.push('/(auth)/create-account')
   }
 
   return (
-    <ScrollView>
+    <ScrollView >
       {/* IF STEP ONE! */}
       {currentStep === 0 && (
         <StepOne handleNextStep={handleNextStep} currentStep={currentStep} handleSkip={handleSkip}/>

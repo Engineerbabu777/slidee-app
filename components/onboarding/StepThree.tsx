@@ -124,7 +124,9 @@ export default function StepThree ({
             onPress={handleSkip}
           >
             <Text
-              style={{ color: 'white', textAlign: 'center', fontWeight: '500' }}
+                style={{ color: 'white', textAlign: 'center', fontWeight: '500',
+                fontFamily: 'NotoBold',
+               }}
             >
               Skip
             </Text>
@@ -141,7 +143,9 @@ export default function StepThree ({
             onPress={handleNextStep}
           >
             <Text
-              style={{ color: 'white', textAlign: 'center', fontWeight: '500' }}
+                style={{ color: 'white', textAlign: 'center', fontWeight: '500',
+                fontFamily: 'NotoBold',
+               }}
             >
               Next
             </Text>

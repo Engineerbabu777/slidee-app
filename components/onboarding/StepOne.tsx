@@ -116,12 +116,15 @@ export default function StepOne ({ currentStep, handleNextStep,handleSkip }: Ste
               width: '45%',
               backgroundColor: 'black',
               paddingVertical: 13,
-              borderRadius: 50
+              borderRadius: 50,
+
             }}
             onPress={handleSkip}
           >
             <Text
-              style={{ color: 'white', textAlign: 'center', fontWeight: '500' }}
+              style={{ color: 'white', textAlign: 'center', fontWeight: '500',              
+                fontFamily: 'NotoBold',
+              }}
             >
               Skip
             </Text>
@@ -138,7 +141,9 @@ export default function StepOne ({ currentStep, handleNextStep,handleSkip }: Ste
             onPress={handleNextStep}
           >
             <Text
-              style={{ color: 'white', textAlign: 'center', fontWeight: '500' }}
+              style={{ color: 'white', textAlign: 'center', fontWeight: '500',
+                fontFamily: 'NotoBold',
+               }}
             >
               Next
             </Text>
