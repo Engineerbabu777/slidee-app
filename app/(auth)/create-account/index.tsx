@@ -12,8 +12,11 @@ import UserIconComponent from '@/assets/icons/user.icon'
 import Mail01Icon from '@/assets/icons/email.icon'
 import SquareLock02Icon from '@/assets/icons/lock.icon'
 import ViewOffSlashIcon from '@/assets/icons/hide.icon'
+import { useRouter } from 'expo-router'
 
 export default function CreateAccount () {
+  const router = useRouter()
+
   return (
     <ScrollView>
       <StatusBar barStyle={'dark-content'} />
@@ -26,14 +29,14 @@ export default function CreateAccount () {
         {/* WELCOME TEXT! */}
         <View
           style={{
-            marginTop: 40,
+            marginTop: 50,
             width: '100%'
           }}
         >
           <Text
             style={{
               fontFamily: 'NotoBold',
-              fontSize: 22,
+              fontSize: 24,
               textAlign: 'center',
               width: '100%'
             }}
@@ -62,14 +65,14 @@ export default function CreateAccount () {
           <View
             style={{
               borderRadius: 100,
-              backgroundColor: '#F2F9FF',
+              backgroundColor: '#FAFAFAFF',
               flexDirection: 'row',
               alignItems: 'center',
               paddingHorizontal: 10,
               overflow: 'hidden',
               paddingVertical: 4,
               borderWidth: 1,
-              borderColor: '#0D69C0',
+              borderColor: '#BCCCDC',
 
               gap: 5
             }}
@@ -91,13 +94,13 @@ export default function CreateAccount () {
           <View
             style={{
               borderRadius: 100,
-              backgroundColor: '#F2F9FF',
+              backgroundColor: '#FAFAFAFF',
               flexDirection: 'row',
               alignItems: 'center',
               paddingHorizontal: 10,
               paddingVertical: 4,
               overflow: 'hidden',
-              borderColor: '#0D69C0',
+              borderColor: '#BCCCDC',
               borderWidth: 1,
 
               gap: 5
@@ -122,13 +125,13 @@ export default function CreateAccount () {
           <View
             style={{
               borderRadius: 100,
-              backgroundColor: '#F2F9FF',
+              backgroundColor: '#FAFAFAFF',
               flexDirection: 'row',
               alignItems: 'center',
               paddingHorizontal: 10,
               overflow: 'hidden',
               paddingVertical: 4,
-              borderColor: '#0D69C0',
+              borderColor: '#BCCCDC',
               borderWidth: 1,
 
               gap: 5
@@ -154,14 +157,14 @@ export default function CreateAccount () {
           <View
             style={{
               borderRadius: 100,
-              backgroundColor: '#F2F9FF',
+              backgroundColor: '#FAFAFAFF',
               flexDirection: 'row',
               alignItems: 'center',
               paddingHorizontal: 10,
               paddingVertical: 4,
               overflow: 'hidden',
               borderWidth: 1,
-              borderColor: '#0D69C0',
+              borderColor: '#BCCCDC',
 
               gap: 5
             }}
@@ -214,7 +217,9 @@ export default function CreateAccount () {
             paddingVertical: 13,
             borderRadius: 50
           }}
-          onPress={() => {Alert.alert("Creating new user...")}}
+          onPress={() => {
+            Alert.alert('Creating new user...')
+          }}
         >
           <Text
             style={{
@@ -231,10 +236,14 @@ export default function CreateAccount () {
         {/* already account? */}
         <View style={{ marginTop: 20 }}>
           <Text style={{ textAlign: 'center', fontFamily: 'NotoMedium' }}>
-            Already have an account?{' '}
-            <Text style={{ fontFamily: 'NotoBold', color: '#0D69C0' }}>
-              Signin
+            Already have an account? {/* <Pressable> */}
+            <Text
+              onPress={() => router.push('/(auth)/login')}
+              style={{ fontFamily: 'NotoBold', color: '#0D69C0' }}
+            >
+              Sign In
             </Text>
+            {/* </Pressable> */}
           </Text>
         </View>
       </View>

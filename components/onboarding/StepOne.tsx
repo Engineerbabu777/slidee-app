@@ -17,7 +17,7 @@ type StepOneProps = {
 export default function StepOne ({ currentStep, handleNextStep,handleSkip }: StepOneProps) {
   return (
     <>
-      <View style={{ fontFamily: 'NotoBold', width: '100%' }}>
+      <View style={{ width: '100%' }}>
         <StatusBar barStyle={'dark-content'} />
 
         <View
