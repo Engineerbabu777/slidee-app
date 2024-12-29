@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import {
   Image,
   View,
@@ -13,11 +13,13 @@ import * as ImagePicker from 'expo-image-picker'
 import Entypo from '@expo/vector-icons/Entypo'
 import { Picker } from '@react-native-picker/picker'
 import * as Location from 'expo-location'
+import { useRouter } from 'expo-router'
 
 export default function Index () {
   const [image, setImage] = useState(null)
   const [selectedLanguage, setSelectedLanguage] = useState()
   const [location, setLocation] = useState(null)
+  const router = useRouter()
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -40,7 +42,7 @@ export default function Index () {
       setErrorMsg('Permission to access location was denied')
       return
     }
-    console.log({status})
+    console.log({ status })
 
     const { coords } = await Location.getCurrentPositionAsync()
 
@@ -63,7 +65,7 @@ export default function Index () {
 
   return (
     <>
-    <StatusBar animated barStyle={"dark-content"}/>
+      <StatusBar animated barStyle={'dark-content'} />
       <ScrollView>
         {/* TOP! */}
         <View style={{ marginTop: 30 }}>
@@ -242,7 +244,7 @@ export default function Index () {
             </View>
             <TextInput
               value={location}
-              onChangeText={(text) => setLocation(text)}
+              onChangeText={text => setLocation(text)}
               placeholder='Your current location'
               style={{
                 backgroundColor: '#FAFAFAFF',
@@ -265,7 +267,7 @@ export default function Index () {
               borderRadius: 50
             }}
             onPress={() => {
-              Alert.alert('Creating new user...')
+              router.push('/(tabs)/home')
             }}
           >
             <Text
