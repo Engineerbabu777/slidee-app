@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router'
 import React from 'react'
 import {
   View,
@@ -12,6 +13,7 @@ import {
 } from 'react-native'
 
 export default function Index () {
+  const router = useRouter()
   return (
     <ScrollView>
       <StatusBar barStyle={'dark-content'} />
@@ -97,7 +99,7 @@ export default function Index () {
               borderRadius: 50
             }}
             onPress={() => {
-              router.push('/(auth)/home')
+              router.push('/(auth)/create-profile')
             }}
           >
             <Text
